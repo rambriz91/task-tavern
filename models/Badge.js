@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Quest extends Model {}
+class Badge extends Model {}
 
-Quest.init(
+Badge.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,38 +11,22 @@ Quest.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    badge_title: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [100],
+        len: [50],
       },
     },
-    description: {
+    badge_description: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [500],
+        len: [200],
       },
     },
-    reward: {
-      type: DataTypes.DECIMAL(10, 2),
-      allowNull: false,
-      validate: {
-        isDecimal: true,
-      },
-    },
-    quest_type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    keywords: {
-      type: DataTypes.ARRAY,
-      allowNull: false,
-    },
-    poster_id: {
+    user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
         model: 'user',
         key: 'id',
@@ -54,8 +38,8 @@ Quest.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'quest',
+    modelName: 'badge',
   },
 );
 
-module.exports = Quest;
+module.exports = Badge;

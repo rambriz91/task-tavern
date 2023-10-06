@@ -31,7 +31,7 @@ User.init(
     user_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique:true,
+      unique: true,
     },
     password: {
       type: DataTypes.STRING,
@@ -40,9 +40,6 @@ User.init(
         len: [8],
       },
     },
-    badges:{
-      type: DataTypes.ARRAY,
-    }
   },
   {
     hooks: {
@@ -56,7 +53,7 @@ User.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
-  }
+  },
 );
 
 module.exports = User;
