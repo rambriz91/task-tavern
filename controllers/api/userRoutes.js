@@ -1,5 +1,9 @@
+
+
 const router = require('express').Router();
 const { User } = require('../../models');
+
+//post useremail, and pasword to db
 
 router.post('/', async (req, res) => {
   try {
@@ -20,12 +24,15 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+//logs user in if match is found
 router.post('/login', async (req, res) => {
   try {
     // Find the user who matches the posted e-mail address
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
+      console.log('no user found');
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
@@ -36,6 +43,7 @@ router.post('/login', async (req, res) => {
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
+      console.log('incorrect password');
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
