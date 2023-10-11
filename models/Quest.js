@@ -15,14 +15,14 @@ Quest.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [100],
+        len: [5, 100],
       },
     },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [500],
+        len: [20, 500],
       },
     },
     reward: {
@@ -36,10 +36,10 @@ Quest.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    keywords: {
-      type: DataTypes.ARRAY,
-      allowNull: false,
-    },
+    // keywords: {
+    //   type: DataTypes.ARRAY,
+    //   allowNull: false,
+    // },
     poster_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
