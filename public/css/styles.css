@@ -71,7 +71,7 @@ header {
     justify-content: center;
 }
 
-.post {
+.post, .preview {
     text-align: center;
     border: solid;
     padding: 10px;
