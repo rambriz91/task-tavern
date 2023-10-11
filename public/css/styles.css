@@ -86,6 +86,10 @@ header {
     cursor: pointer;
 }
 
+.preview {
+    cursor: default;
+}
+
 .post:hover {
     transform: scale(1.1);
 }
@@ -95,6 +99,7 @@ header {
     font-size: 30px;
     margin: 5px;
     padding: 10px;
+    text-decoration: underline;
 }
 
 .des, .keywords {
@@ -107,6 +112,53 @@ header {
     width: 40vh;
 }
 
-.accept-btn, .exit-btn {
+.accept-btn {
     padding: 3px;
+    margin: 5px;
+    background: rgb(15, 171, 15);
+    border-radius: 7px;
+}
+
+.exit-btn {
+    padding: 3px 15px;
+    margin: 5px;
+    background: rgb(186, 16, 16);
+    border-radius: 7px;
+}
+
+.accept-btn:hover {
+    background: rgb(20, 225, 20);
+    cursor: pointer;
+}
+
+.exit-btn:hover {
+    background: rgb(247, 23, 23);
+    cursor: pointer;
+}
+
+.accept-quest {
+    margin: 15px 5px;
+}
+
+.quest-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quest-preview .preview {
+    display: none;
+}
+
+.quest-preview .preview.active {
+    display: inline-block;
+}
+
+.quest-preview.active {
+    background: rgba(0,0,0,.8);
 }
