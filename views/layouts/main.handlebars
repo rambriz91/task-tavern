@@ -10,9 +10,11 @@
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      MVC Project Template
-    </h1>
+    <div id="logo">Task Tavern</div>
+    <button id="profile-btn" class="btn">Profile</button>
+    <button id="post-btn" class="btn">Post Quest</button>
+    <button id="active-btn" class="btn">Active Quests</button>
+    <button id="logout-btn" class="btn">Logout</button>
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
     <nav>
