@@ -12,12 +12,12 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const Quest of questPostData) {
-    await Quest.create({
-      ...Quest,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  // for (const Quest of questPostData) {
+  //   await Quest.create({
+  //     ...Quest,
+  //     user_id: users[Math.floor(Math.random() * users.length)].id,
+  //   });
+  // }
 
   process.exit(0);
 };
