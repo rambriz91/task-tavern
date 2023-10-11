@@ -106,3 +106,7 @@ header {
     color: var(--sunset);
     width: 40vh;
 }
+
+.accept-btn, .exit-btn {
+    padding: 3px;
+}
