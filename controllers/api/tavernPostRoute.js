@@ -3,7 +3,7 @@ const { Quest } = require('../../models');
 const withAuth = require('../../utils/auth');
 // http://localhost:3001/api/tavernPostRoute/
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   res.render('Post-quest');
 });
 

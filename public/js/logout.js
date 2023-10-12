@@ -13,4 +13,9 @@ const logout = async () => {
   }
 };
 
+const postQuest = async () => {
+  document.location.replace('/postquest');
+};
+
 document.querySelector('#logout').addEventListener('click', logout);
+document.querySelector('#post-btn').addEventListener('click', postQuest);
