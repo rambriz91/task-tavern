@@ -87,6 +87,19 @@ header {
   cursor: pointer;
 }
 
+.indiv-post {
+  text-align: center;
+  border: solid;
+  padding: 10px;
+  width: 80%;
+  height: 80vh;
+  background: #ffcf9c;
+  color: black;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  outline: 0.1rem solid black;
+  outline-offset: -0.5rem;
+}
+
 .preview {
   cursor: default;
 }
@@ -171,4 +184,9 @@ header {
 
 .reward {
   color: var(--green);
+}
+
+.bottom {
+  top: 75%;
+  position: relative;
 }
