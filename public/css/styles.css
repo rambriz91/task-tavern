@@ -8,6 +8,15 @@
   --red: #690000;
 }
 
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--brown);
+}
+
 body {
   background-color: var(--licorice);
   color: var(--sunset);
