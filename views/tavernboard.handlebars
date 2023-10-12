@@ -2,12 +2,14 @@
   <div id='bulletin'>Bulletin Board</div>
   <div id='posts-section'>
     {{#each quests as |quest|}}
-      <div class='post'>
-        <div class='title'>{{quest.title}}</div>
-        <div class='desc'>{{quest.description}}</div>
-        <div class='reward'>${{quest.reward}}</div>
-        <div class='quest-type'>Quest Type: {{quest.quest_type}}</div>
-      </div>
+      <a href='/{{quest.id}}'>
+        <div class='post'>
+          <div class='title'>{{quest.title}}</div>
+          <div class='desc'>{{quest.description}}</div>
+          <div class='reward'>${{quest.reward}}</div>
+          <div class='quest-type'>Quest Type: {{quest.quest_type}}</div>
+        </div>
+      </a>
     {{/each}}
   </div>
   <div>
