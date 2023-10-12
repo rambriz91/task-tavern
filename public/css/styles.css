@@ -168,3 +168,7 @@ header {
   height: 50vh;
   margin: 3% 0;
 }
+
+.reward {
+  color: var(--green);
+}
