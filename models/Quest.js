@@ -36,10 +36,6 @@ Quest.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // keywords: {
-    //   type: DataTypes.ARRAY,
-    //   allowNull: false,
-    // },
     poster_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
