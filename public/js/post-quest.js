@@ -1,3 +1,9 @@
+const cancelBtn = document.querySelector('#post-quest-cancel');
+
+const cancelBtnHandler = async () => {
+  document.location.replace('/');
+};
+
 const postFormHandler = async (event) => {
   event.preventDefault();
 
@@ -23,3 +29,5 @@ const postFormHandler = async (event) => {
 document
   .querySelector('#post-quest-form')
   .addEventListener('submit', postFormHandler);
+
+cancelBtn.addEventListener('click', cancelBtnHandler);
