@@ -187,7 +187,7 @@ header {
 }
 
 .description {
-  height: 50vh;
+  height: 30vh;
   margin: 3% 0;
 }
 
@@ -198,4 +198,8 @@ header {
 .bottom {
   top: 75%;
   position: relative;
+}
+
+.buttons-container {
+  margin-top: 1%;
 }
