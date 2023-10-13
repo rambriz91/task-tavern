@@ -189,17 +189,17 @@ header {
 
 .desc{
   padding: 2% 0;
-  margin-bottom: 10%;
+  margin-bottom: 8%;
 }
 .task{
   font-size: 20;
-  margin-bottom: 12%;
+  margin-bottom: 5%;
 }
 
 .reward {
   color: var(--green);
   margin-top: 5%;
-  margin-bottom: 10%;
+  margin-bottom: 7%;
 }
 
 .bottom {
