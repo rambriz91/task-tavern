@@ -8,12 +8,10 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.post('/', withAuth, async (req, res) => {
+  console.log('Tavern Post Create');
   console.log(req.body);
   try {
-    const newQuestPost = await Quest.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
+    const newQuestPost = await Quest.create(req.body);
     res.status(200).json(newQuestPost);
   } catch (err) {
     console.log(err);
@@ -30,7 +28,7 @@ router.put('id:', withAuth, async (req, res) => {
       },
     });
     if (!questPostData) {
-      res.status(404).json({ message: 'No Quest foind with this id!' });
+      res.status(404).json({ message: 'No Quest found with this id!' });
       return;
     }
     res.status(200).json(questPostData);
