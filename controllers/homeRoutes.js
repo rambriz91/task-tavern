@@ -1,12 +1,36 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
+const { Quest } = require('../models');
 
 // Prevent non logged in users from viewing the homepage
 router.get('/', withAuth, async (req, res) => {
   try {
-    res.render('homepage', {
+    const questData = await Quest.findAll();
+
+    const quests = questData.map((quest) => quest.get({ plain: true }));
+
+    res.render('tavernboard', {
+      quests,
       user: req.session.user,
       // Pass the logged in flag to the template
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+router.get('/activequests', withAuth, async (req, res) =>{
+  res.render('viewQuest', {
+user: req.session.user,
+logged_in: req.session.logged_in,
+
+  })
+})
+
+router.get('/postquest', withAuth, async (req, res) => {
+  try {
+    res.render('post-quest', {
+      user: req.session.user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -22,6 +46,22 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/:id', withAuth, async (req, res) => {
+  try {
+    const questData = await Quest.findByPk(req.params.id);
+
+    const quest = questData.get({ plain: true });
+
+    res.render('indiv-quest', {
+      ...quest,
+      user: req.session.user,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
