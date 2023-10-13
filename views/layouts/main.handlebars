@@ -1,36 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MVC Project Template</title>
-  <link rel="stylesheet" href="/css/jass.css">
-</head>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Task Tavern</title>
+    <link
+      rel='stylesheet'
+      href='https://fonts.googleapis.com/css?family=MedievalSharp'
+    />
+    <link rel='stylesheet' href='./css/reset.css' />
+    <link rel='stylesheet' href='./css/jass.css' />
+    <link rel='stylesheet' href='./css/styles.css' />
+  </head>
 
-<body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      MVC Project Template
-    </h1>
-    <!-- Only display the logout button if the user is logged in -->
+  <body>
+    <header class='display-flex align-center p-2'>
+      <a href='/'><h1 id='logo'>Task Tavern</h1></a>
+      <!-- Only display the logout button if the user is logged in -->
+      {{#if logged_in}}
+        <nav class='flex-grow-1'>
+          <button id='profile-btn' class='btn'>Profile</button>
+          <button id='post-btn' class='btn'>Post Quest</button>
+          <button id='active-btn' class='btn'>Active Quests</button>
+          <button id='logout' class='btn'>Logout</button>
+        </nav>
+      {{/if}}
+    </header>
+    <main class='container container-fluid mt-5'>
+      {{{body}}}
+    </main>
+    <footer>
+
+    </footer>
+
+    <!-- Only include the logout script if the user is logged in -->
     {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
+      <script src='./js/logout.js'></script>
     {{/if}}
-  </header>
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-  </main>
-  <footer>
-      
-  </footer>
-
-  <!-- Only include the logout script if the user is logged in -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+  </body>
 
 </html>

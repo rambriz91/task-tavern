@@ -16,6 +16,7 @@ const logout = async () => {
 const postQuest = async () => {
   document.location.replace('/postquest');
 };
+
 const activeQuests = async () => {
   document.location.replace('/activequests');
 };

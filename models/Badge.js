@@ -15,14 +15,14 @@ Badge.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [50],
+        len: [10, 50],
       },
     },
     badge_description: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [200],
+        len: [10, 200],
       },
     },
     user_id: {

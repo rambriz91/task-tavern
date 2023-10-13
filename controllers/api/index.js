@@ -3,6 +3,6 @@ const userRoutes = require('./userRoutes');
 const tavernPostRoute = require('./tavernPostRoute');
 
 router.use('/users', userRoutes);
-router.use('./tavernPostRoute', tavernPostRoute);
+router.use('/tavernpost', tavernPostRoute);
 
 module.exports = router;
