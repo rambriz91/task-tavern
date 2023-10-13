@@ -1,0 +1,25 @@
+<div id='bulletin-board'>
+  <div id='bulletin'>Active Quest Bulletin Board</div>
+  <div id='posts-section'>
+    {{#each quests as |quest|}}
+      <a href='/{{quest.id}}'>
+        <div class='post'>
+          <div class='title'>{{quest.title}}</div>
+          <div class='desc'>{{quest.description}}</div>
+          <div class='reward'>${{quest.reward}}</div>
+          <div class='quest-type'>Quest Type: {{quest.quest_type}}</div>
+        </div>
+      </a>
+    {{/each}}
+  </div>
+  <div>
+    {{!-- <form id='keyword-search'> --}}
+      {{!-- <input
+        type='text'
+        placeholder='search keyword...'
+        id='search'
+        class='search'
+      /> --}}
+    {{!-- </form> --}}
+  </div>
+</div>

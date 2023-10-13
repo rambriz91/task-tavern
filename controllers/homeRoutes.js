@@ -19,6 +19,24 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/activequests', withAuth, async (req, res) =>{
+  res.render('viewQuest', {
+user: req.session.user,
+logged_in: req.session.logged_in,
+
+  })
+})
+
+router.get('/postquest', withAuth, async (req, res) => {
+  try {
+    res.render('post-quest', {
+      user: req.session.user,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/postquest', withAuth, async (req, res) => {
   try {
