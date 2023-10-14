@@ -207,6 +207,67 @@ header {
   position: relative;
 }
 
+#profile-page {
+  display: flex;
+  border: solid;
+  height: 95%;
+  width: 95%;
+  margin: 20px;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+#badge {
+  background: var(--red);
+  border-radius: 100%;
+  width: 400px;
+  height: 400px;
+  border: solid;
+}
+
+.container-1 {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+}
+
+#quest-completed {
+  font-size: 24px;
+}
+
+#badge-title {
+  text-decoration: underline;
+}
+
+#badges-completed {
+  font-size: 36px;
+  border: solid;
+  margin: 30px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 8px;
+  background: var(--red);
+  color: var(--chestnut);
+}
+
+.emblem {
+  margin: 15px;
+  width: 250px;
+  height: 250px;
+  border: solid;
+  border-radius: 50px;
+  background: var(--chestnut);
+  border-color: black;
+}
+
+#username {
+  font-size: 54px;
 .buttons-container {
   margin-top: 1%;
 }
@@ -224,4 +285,5 @@ header {
   outline: 0.1rem solid black;
   outline-offset: -0.5rem;
   cursor: pointer;
+
 }
