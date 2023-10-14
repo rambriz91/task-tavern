@@ -19,6 +19,13 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/activequests', withAuth, async (req, res) =>{
+  res.render('viewQuest', {
+user: req.session.user,
+logged_in: req.session.logged_in,
+
+  })
+})
 
 router.get('/postquest', withAuth, async (req, res) => {
   try {
@@ -31,14 +38,9 @@ router.get('/postquest', withAuth, async (req, res) => {
   }
 });
 
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/postquest', withAuth, async (req, res) => {
   try {
-    const questData = await Quest.findByPk(req.params.id);
-
-    const quest = questData.get({ plain: true });
-
-    res.render('indiv-quest', {
-      ...quest,
+    res.render('post-quest', {
       user: req.session.user,
       logged_in: req.session.logged_in,
     });
@@ -55,6 +57,22 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/:id', withAuth, async (req, res) => {
+  try {
+    const questData = await Quest.findByPk(req.params.id);
+
+    const quest = questData.get({ plain: true });
+
+    res.render('indiv-quest', {
+      ...quest,
+      user: req.session.user,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

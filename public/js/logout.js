@@ -17,5 +17,10 @@ const postQuest = async () => {
   document.location.replace('/postquest');
 };
 
+const activeQuests = async () => {
+  document.location.replace('/activequests');
+};
+
 document.querySelector('#logout').addEventListener('click', logout);
 document.querySelector('#post-btn').addEventListener('click', postQuest);
+document.querySelector('#active-btn').addEventListener('click', activeQuests);

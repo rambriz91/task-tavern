@@ -88,12 +88,12 @@ header {
   margin: 20px;
   width: 300px;
   min-height: 300px;
-  background: #ffcf9c;
+  background-image: url('https://i.imgur.com/Y9Tiq8a.jpg');
   color: black;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   outline: 0.1rem solid black;
   outline-offset: -0.5rem;
   cursor: pointer;
+  box-shadow: 2px 4px 8px 3px #000000
 }
 
 .indiv-post {
@@ -102,7 +102,7 @@ header {
   padding: 10px;
   width: 80%;
   height: 80vh;
-  background: #ffcf9c;
+  background-image: url('https://i.imgur.com/Y9Tiq8a.jpg');
   color: black;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   outline: 0.1rem solid black;
@@ -115,6 +115,7 @@ header {
 
 .post:hover {
   transform: scale(1.1);
+  opacity: 80%;
 }
 
 .title {
@@ -186,13 +187,19 @@ header {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.description {
-  height: 50vh;
-  margin: 3% 0;
+.desc{
+  padding: 2% 0;
+  margin-bottom: 10%;
+}
+.task{
+  font-size: 20;
+  margin-bottom: 12%;
 }
 
 .reward {
   color: var(--green);
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 
 .bottom {
@@ -261,4 +268,22 @@ header {
 
 #username {
   font-size: 54px;
+.buttons-container {
+  margin-top: 1%;
+}
+
+.active-quest {
+  text-align: center;
+  border: solid;
+  padding: 10px;
+  margin: 20px;
+  width: 300px;
+  min-height: 300px;
+  background: #667770;
+  color: black;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  outline: 0.1rem solid black;
+  outline-offset: -0.5rem;
+  cursor: pointer;
+
 }
