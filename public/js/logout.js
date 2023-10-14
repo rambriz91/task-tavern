@@ -21,6 +21,11 @@ const activeQuests = async () => {
   document.location.replace('/activequests');
 };
 
+const viewProfile = async () => {
+  document.location.replace('/profile');
+};
+
 document.querySelector('#logout').addEventListener('click', logout);
 document.querySelector('#post-btn').addEventListener('click', postQuest);
 document.querySelector('#active-btn').addEventListener('click', activeQuests);
+document.querySelector('#profile-btn').addEventListener('click', viewProfile);
