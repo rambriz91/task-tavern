@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Quest } = require('../models');
+const { Quest, User } = require('../models');
 
 // Prevent non logged in users from viewing the homepage
 router.get('/', withAuth, async (req, res) => {
@@ -19,13 +19,12 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-router.get('/activequests', withAuth, async (req, res) =>{
+router.get('/activequests', withAuth, async (req, res) => {
   res.render('viewQuest', {
-user: req.session.user,
-logged_in: req.session.logged_in,
-
-  })
-})
+    user: req.session.user,
+    logged_in: req.session.logged_in,
+  });
+});
 
 router.get('/postquest', withAuth, async (req, res) => {
   try {
@@ -57,6 +56,25 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    console.log(req.session.user.id);
+    const userData = await User.findOne(req.params.id, {
+      where: {
+        id: req.session.user.id,
+      },
+    });
+    const userProfile = userData.get({ plain: true });
+    res.render('profile', {
+      ...userProfile,
+      user: req.session.user,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/:id', withAuth, async (req, res) => {

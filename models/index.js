@@ -11,4 +11,6 @@ User.hasMany(Badge, {
   onDelete: 'CASCADE',
 });
 
+// User.hasMany(Quest);
+
 module.exports = { User, Badge, Quest };
