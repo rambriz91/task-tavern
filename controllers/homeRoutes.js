@@ -88,6 +88,10 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/sign-up', async (req, res) => {
+  res.render('sign-up',)
+})
+
 
 router.get('/:id', withAuth, async (req, res) => {
   try {
