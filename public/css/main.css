@@ -1,0 +1,37 @@
+.title{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login{
+    display: flex;
+  justify-content: center;
+align-items: center;
+  min-height: 100vh;
+  min-width: 100vh;
+  color: black;
+}
+.login-form{
+    height: 300px;
+    width: 300px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  outline: 0.1rem solid black;
+  outline-offset: -0.2rem;
+   
+}
+header{
+    background-color: transparent !important;
+    color: white;
+}
+
+
+
+.background{
+    background:url('tavern\ doors.png') no-repeat;
+    background-size: 100vw 100vh;
+    text-align: center;
+
+}
