@@ -8,7 +8,6 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.post('/', withAuth, async (req, res) => {
-  console.log('Tavern Post Create');
   console.log(req.body);
   try {
     const newQuestPost = await Quest.create(req.body);
