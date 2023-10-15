@@ -218,3 +218,31 @@ header {
   outline-offset: -0.5rem;
   cursor: pointer;
 }
+.reQuest {
+  text-align: center;
+  border: solid;
+  padding: 10px;
+  margin: 20px;
+  width: 300px;
+  min-height: 300px;
+  background: #77666d;
+  color: black;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  outline: 0.1rem solid black;
+  outline-offset: -0.5rem;
+  cursor: pointer;
+}
+.quest-complete {
+  text-align: center;
+  border: solid;
+  padding: 10px;
+  margin: 20px;
+  width: 300px;
+  min-height: 300px;
+  background: #666677;
+  color: black;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  outline: 0.1rem solid black;
+  outline-offset: -0.5rem;
+  cursor: pointer;
+}
