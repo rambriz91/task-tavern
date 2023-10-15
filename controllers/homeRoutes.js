@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Quest, User } = require('../models');
+const { Quest, User, Badge } = require('../models');
 
 // Prevent non logged in users from viewing the homepage
 router.get('/', withAuth, async (req, res) => {
@@ -62,11 +62,23 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     console.log(req.session.user.id);
     const userData = await User.findOne(req.params.id, {
+      include: [
+        {
+          model: Badge,
+          attributes: [
+            ['id', 'badge_id'],
+            'badge_title',
+            'badge_description',
+            'icon',
+          ],
+        },
+      ],
       where: {
         id: req.session.user.id,
       },
     });
     const userProfile = userData.get({ plain: true });
+    console.log(userProfile);
     res.render('profile', {
       ...userProfile,
       user: req.session.user,

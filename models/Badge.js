@@ -15,7 +15,7 @@ Badge.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [10, 50],
+        len: [5, 50],
       },
     },
     badge_description: {
@@ -24,6 +24,10 @@ Badge.init(
       validate: {
         len: [10, 200],
       },
+    },
+    icon: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,

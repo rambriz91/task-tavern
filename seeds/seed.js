@@ -3,6 +3,7 @@ const { User, Quest, Badge } = require('../models');
 
 const userData = require('./userData.json');
 const questPostData = require('./questPostData.json');
+const badgeData = require('./badgeData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -13,6 +14,8 @@ const seedDatabase = async () => {
   });
 
   const quests = await Quest.bulkCreate(questPostData);
+
+  const badges = await Badge.bulkCreate(badgeData);
 
   process.exit(0);
 };
