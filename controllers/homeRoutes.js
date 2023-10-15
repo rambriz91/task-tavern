@@ -89,9 +89,8 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 router.get('/sign-up', async (req, res) => {
-  res.render('sign-up',)
-})
-
+  res.render('sign-up');
+});
 
 router.get('/:id', withAuth, async (req, res) => {
   try {
