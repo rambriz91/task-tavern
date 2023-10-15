@@ -93,7 +93,7 @@ header {
   outline: 0.1rem solid black;
   outline-offset: -0.5rem;
   cursor: pointer;
-  box-shadow: 2px 4px 8px 3px #000000
+  box-shadow: 2px 4px 8px 3px #000000;
 }
 
 .indiv-post {
@@ -187,11 +187,11 @@ header {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.desc{
+.desc {
   padding: 2% 0;
   margin-bottom: 10%;
 }
-.task{
+.task {
   font-size: 20;
   margin-bottom: 12%;
 }
@@ -268,6 +268,7 @@ header {
 
 #username {
   font-size: 54px;
+}
 .buttons-container {
   margin-top: 1%;
 }

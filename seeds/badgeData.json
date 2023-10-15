@@ -1,36 +1,36 @@
 [
   {
-    " badge_title": "Carpenter",
+    "badge_title": "Carpenter",
     "badge_description": "Earned by those who have distinguished themselves by completing 5 Carpenter quests",
     "icon": "woodworking.png",
     "user_id": 1
   },
   {
-    " badge_title": "Contractor",
+    "badge_title": "Contractor",
     "badge_description": "Earned by those who have distinguished themselves by completing 5 Contractor quests",
     "icon": "contractor.png",
     "user_id": 1
   },
   {
-    " badge_title": "Plumber",
+    "badge_title": "Plumber",
     "badge_description": "Earned by those who have distinguished themselves by completing 5 Plumber quests",
     "icon": "plumber.png",
     "user_id": 1
   },
   {
-    " badge_title": "Landscaper",
+    "badge_title": "Landscaper",
     "badge_description": "Earned by those who have distinguished themselves by completing 5 Landscaper quests",
     "icon": "lawn-mower.png",
     "user_id": 2
   },
   {
-    " badge_title": "Distinguished",
+    "badge_title": "Distinguished",
     "badge_description": "Earned after completing 10 quests of any type",
     "icon": "sword.png",
     "user_id": 2
   },
   {
-    " badge_title": "Journeyman",
+    "badge_title": "Journeyman",
     "badge_description": "Earned by those who have distinguished themselves by completing their first quest",
     "icon": "journeyman.png",
     "user_id": 2

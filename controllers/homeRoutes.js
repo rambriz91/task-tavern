@@ -60,25 +60,25 @@ router.get('/login', (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    console.log(req.session.user.id);
-    const userData = await User.findOne(req.params.id, {
+    const userData = await User.findOne({
+      where: {
+        id: req.session.user.id,
+      },
       include: [
         {
           model: Badge,
           attributes: [
-            ['id', 'badge_id'],
+            'id',
             'badge_title',
             'badge_description',
             'icon',
+            'user_id',
           ],
         },
       ],
-      where: {
-        id: req.session.user.id,
-      },
     });
     const userProfile = userData.get({ plain: true });
-    console.log(userProfile);
+    console.log(userProfile); // This will log the user data with associated badges.
     res.render('profile', {
       ...userProfile,
       user: req.session.user,
