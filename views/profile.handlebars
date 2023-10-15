@@ -10,9 +10,9 @@
         <div id="badges-completed">
             <div id="badge-title">____BADGES____</div>
             <div class="container-2">
-                <img class="emblem" src="./imgs/sword.png" alt="crown"></img>
-                <img class="emblem" src="./imgs/crown.png" alt="crown"></img>
-                <img class="emblem" src="./imgs/crown.png" alt="crown"></img>
+                {{#each badges as |badge|}}
+                <img class="emblem" src="./imgs/{{badge.icon}}" alt="{{badge.badge_title}}"></img>
+                {{/each}}
             </div>
         </div>
     </div>
