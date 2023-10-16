@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Quest } = require('../../models');
 const withAuth = require('../../utils/auth');
+
 // http://localhost:3001/api/tavernPostRoute/
 
 router.get('/', withAuth, async (req, res) => {
@@ -9,8 +10,16 @@ router.get('/', withAuth, async (req, res) => {
 
 router.post('/', withAuth, async (req, res) => {
   console.log(req.body);
+  console.log(req.session.user);
   try {
-    const newQuestPost = await Quest.create(req.body);
+    const newQuestPost = await Quest.create({
+      title: req.body.title,
+      description: req.body.description,
+      reward: req.body.reward,
+      quest_type: req.body.quest_type,
+      poster_id: req.session.user.id,
+    });
+    console.log(newQuestPost);
     res.status(200).json(newQuestPost);
   } catch (err) {
     console.log(err);

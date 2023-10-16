@@ -15,7 +15,12 @@ const postFormHandler = async (event) => {
   if (title && description && reward && quest_type) {
     const response = await fetch('/api/tavernpost', {
       method: 'POST',
-      body: JSON.stringify({ title, description, reward, quest_type }),
+      body: JSON.stringify({
+        title,
+        description,
+        reward,
+        quest_type,
+      }),
       headers: { 'Content-Type': 'application/json' },
     });
 
