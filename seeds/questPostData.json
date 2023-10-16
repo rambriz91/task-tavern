@@ -3,30 +3,35 @@
     "title": "Back Scratcher needed",
     "description": "Have infinite itch on back will need someone to come and scrtch my back will i WFH, will provide lunch and gloves will shower before arrival...",
     "reward": 10.0,
-    "quest_type": "misc"
+    "quest_type": "misc",
+    "poster_id": 1
   },
   {
     "title": "HELP my k/d is below 1!!",
     "description": "I am not very good at COD but i want to impress a girl and the only guys she likes are guys with a k/d above 1. my k/d is sitting at a .88 will pay godd $$$ for someone to grind kills and help my get my k/d over 1.",
     "reward": 500.0,
-    "quest_type": "misc"
+    "quest_type": "misc",
+    "poster_id": 1
   },
   {
     "title": "Clogged toilet",
     "description": " toilet is clogged, i think my son flushed his gold fish in a sock down the toilet and need someone to come and unclog it.",
     "reward": 100.0,
-    "quest_type": "plumber"
+    "quest_type": "plumber",
+    "poster_id": 2
   },
   {
     "title": "Need Highlevel QT for work on house.",
     "description": " i need a highlevel Quest Taker(QT) for some home upgrades, i need new floors, new paint on all my walls, new ceiling in my garage and another charger installed for my EVs",
     "reward": 1500.0,
-    "quest_type": "construction"
+    "quest_type": "construction",
+    "poster_id": 1
   },
   {
     "title": "Professional Cuddler.",
     "description": "I suffer from anxiety and I need someone to be the big spoon for me",
     "reward": 200.0,
-    "quest_type": "personal"
+    "quest_type": "personal",
+    "poster_id": 2
   }
 ]

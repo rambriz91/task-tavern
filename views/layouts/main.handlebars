@@ -11,13 +11,15 @@
     <link rel='stylesheet' href='./css/reset.css' />
     <link rel='stylesheet' href='./css/jass.css' />
     <link rel='stylesheet' href='./css/styles.css' />
-    <link rel='stylesheet' href="./css/main.css" />
+    <link rel='stylesheet' href='./css/main.css' />
   </head>
 
   <body>
-    <header class='title display-flex align-center p-2'>
-      <a href='/'><h1 id='logo'>Task Tavern</h1></a>
-      <img src="/public/css/beer mug-PhotoRoom (1).png">
+    <header class='display-flex align-center p-2'>
+      <a id='logo-cont' href='/'>
+        <img class='beer-mug' src='./imgs/logo.png' />
+        <h1 id='logo'>Task Tavern</h1>
+      </a>
       <!-- Only display the logout button if the user is logged in -->
       {{#if logged_in}}
         <nav class='flex-grow-1'>
@@ -28,7 +30,7 @@
         </nav>
       {{/if}}
     </header>
-    <main class='login container'>
+    <main class='container'>
       {{{body}}}
     </main>
     <footer>
