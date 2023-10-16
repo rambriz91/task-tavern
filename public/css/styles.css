@@ -141,15 +141,17 @@ header {
 .accept-btn {
   padding: 3px;
   margin: 5px;
-  background: rgb(15, 171, 15);
-  border-radius: 7px;
+  background: var(--green);
+    border-radius: 7px;
+  font-size: 30px;
 }
 
 .exit-btn {
   padding: 3px 15px;
   margin: 5px;
-  background: rgb(186, 16, 16);
+  background: var(--red);
   border-radius: 7px;
+  font-size: 30px;
 }
 
 .accept-btn:hover {
@@ -205,7 +207,7 @@ header {
 }
 
 .bottom {
-  top: 75%;
+  top: 25%;
   position: relative;
 }
 
@@ -359,3 +361,14 @@ header {
   display: flex;
   align-self: center;
 }
+
+.indiv-post .desc {
+font-size: 25px;
+}
+
+.indiv-post .reward {
+  font-size: 60px;
+}
+ .indiv-post .quest-type {
+  font-size:  25px;
+ }
