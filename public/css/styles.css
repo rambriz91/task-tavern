@@ -38,6 +38,7 @@ header {
 
 #logo {
   font-size: 30px;
+  align-self: center;
 }
 
 .btn {
@@ -66,6 +67,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 5%;
 }
 
 #bulletin {
@@ -221,11 +223,11 @@ header {
   border-radius: 8px;
 }
 
-#badge {
+.badge {
   background: var(--red);
   border-radius: 100%;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border: solid;
 }
 
@@ -314,4 +316,46 @@ header {
   outline: 0.1rem solid black;
   outline-offset: -0.5rem;
   cursor: pointer;
+}
+
+.signup-form {
+  height: 400px;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  outline: 0.1rem solid black;
+  outline-offset: -0.2rem;
+}
+
+.login-form {
+  height: 400px;
+  width: 400px;
+  background-color: var(--chestnut);
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  outline: 0.1rem solid black;
+  outline-offset: -0.2rem;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vh;
+  color: var(--sunset);
+}
+
+.beer-mug {
+  width: 80px;
+  height: 80px;
+}
+
+#logo-cont {
+  display: inline-flex;
+}
+
+#sign-up {
+  display: flex;
+  align-self: center;
 }
