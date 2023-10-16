@@ -1,14 +1,21 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Quest, User, Badge } = require('../models');
+const { Quest, User, Badge, UserQuest } = require('../models');
 
 // Prevent non logged in users from viewing the homepage
 router.get('/', withAuth, async (req, res) => {
   try {
-    const questData = await Quest.findAll();
-
+    const questData = await Quest.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['id', 'name'],
+          // through: UserQuest,
+        },
+      ],
+    });
     const quests = questData.map((quest) => quest.get({ plain: true }));
-
+    console.log(quests);
     res.render('tavernboard', {
       quests,
       user: req.session.user,
@@ -94,7 +101,14 @@ router.get('/sign-up', async (req, res) => {
 
 router.get('/:id', withAuth, async (req, res) => {
   try {
-    const questData = await Quest.findByPk(req.params.id);
+    const questData = await Quest.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['id', 'name'],
+        },
+      ],
+    });
 
     const quest = questData.get({ plain: true });
 
