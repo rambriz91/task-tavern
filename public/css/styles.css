@@ -320,32 +320,25 @@ header {
   cursor: pointer;
 }
 
-.signup-form {
-  height: 400px;
-  width: 400px;
-  border-radius: 5px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  outline: 0.1rem solid black;
-  outline-offset: -0.2rem;
+.login-container {
+  position: absolute;
+  top: 50%;
+  transform: translate(60%, -50%);
+
 }
 
-.login-form {
-  height: 400px;
-  width: 400px;
+.login-form, .signup-form {
+  height: 450px;
+  width: 450px;
   background-color: var(--chestnut);
   border-radius: 5px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  outline: 0.1rem solid black;
-  outline-offset: -0.2rem;
-}
-
-.login {
+  outline: 0.1rem solid var(--sunset);
+  text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  min-width: 100vh;
-  color: var(--sunset);
 }
 
 .beer-mug {
@@ -357,9 +350,11 @@ header {
   display: inline-flex;
 }
 
-#sign-up {
+.indiv-post {
+  margin: 50px;
+  padding: 50px;
   display: flex;
-  align-self: center;
+  flex-direction: column;
 }
 
 .indiv-post .desc {
@@ -369,6 +364,15 @@ font-size: 25px;
 .indiv-post .reward {
   font-size: 60px;
 }
- .indiv-post .quest-type {
+
+.indiv-post .quest-type {
   font-size:  25px;
  }
+
+#post-quest-form {
+  margin: 30px;
+}
+
+.post-section {
+  margin: 50px 20px;
+}
