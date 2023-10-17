@@ -30,15 +30,22 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/activequests', withAuth, async (req, res) => {
-  res.render('viewQuest', {
-    user: req.session.user,
-    logged_in: req.session.logged_in,
-  });
-});
-
-router.get('/postquest', withAuth, async (req, res) => {
   try {
-    res.render('post-quest', {
+    const userQuestData = await User.findOne({
+      where: {
+        id: req.session.user.id,
+      },
+      include: [
+        {
+          model: Quest,
+        },
+      ],
+    });
+
+    const userQuests = userQuestData.get({ plain: true });
+    console.log(userQuests);
+    res.render('viewQuest', {
+      ...userQuests,
       user: req.session.user,
       logged_in: req.session.logged_in,
     });
@@ -88,7 +95,6 @@ router.get('/profile', withAuth, async (req, res) => {
       ],
     });
     const userProfile = userData.get({ plain: true });
-    console.log(userProfile); // This will log the user data with associated badges.
     res.render('profile', {
       ...userProfile,
       user: req.session.user,
@@ -98,6 +104,7 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.get('/sign-up', async (req, res) => {
   res.render('sign-up');
 });
