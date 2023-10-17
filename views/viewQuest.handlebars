@@ -1,44 +1,21 @@
 <div id='bulletin-board'>
-  <div id='bulletin'>Active Quest Bulletin Board</div>
+  <div id='bulletin'>{{name}}'s Quests</div>
   <div id='posts-section'>
-    {{!-- {{#each quests as |quest|}} --}}
-    <a href='/{{quest.id}}'>
+    {{#each quests as |quest|}}
+
       <div class='active-quest'>
-        <div class='title'>ACTIVE: {{quest.title}}Lorem</div>
-        <div class='desc'>{{quest.description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ad quas
-          cumque quaerat laudantium, quo repudiandae repellat quidem error quae exercitationem molestiae mollitia neque
-          autem, provident earum sunt soluta. Nisi!</div>
-        <div class='reward'>${{quest.reward}}Lorem</div>
-        <div class='quest-type'>Quest Type: {{quest.quest_type}}Lorem</div>
-        <button id= "post-quest-cancel" type="button" class="btn btn-danger">Cancel (Lose QT)</button>
+        <a href='/quest/{{quest.id}}'>
+          <div class='title'>{{quest.title}}</div>
+        </a>
+        <div class='desc'>{{quest.description}}</div>
+        <div class='reward'>${{quest.reward}}</div>
+        <div class='quest-type'>Quest Type: {{quest.quest_type}}</div>
+        <button
+          id='post-quest-cancel'
+          type='button'
+          class='btn btn-danger'
+        >Cancel (Lose QT)</button>
       </div>
-    </a>
-    <div><a href='/{{quest.id}}'>
-        <div class='reQuest'>
-          <div class='title'>reQuest: {{quest.title}}Lorem</div>
-          <div class='desc'>{{quest.description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ad quas
-            cumque quaerat laudantium, quo repudiandae repellat quidem error quae exercitationem molestiae mollitia
-            neque autem, provident earum sunt soluta. Nisi!</div>
-          <div class='reward'>${{quest.reward}}Lorem</div>
-          <div class='quest-type'>Quest Type: {{quest.quest_type}}Lorem</div>
-           <button id= "post-quest-submit" type="submit" class="btn btn-primary">Edit</button>
-           <button id= "post-quest-cancel" type="button" class="btn btn-danger">Cancel</button>
-        </div>
-      </a></div>
-      <div><div><a href='/{{quest.id}}'>
-        <div class='quest-complete'>
-          <div class='title'>COMPLETED: {{quest.title}}Lorem</div>
-          <div class='desc'>{{quest.description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ad quas
-            cumque quaerat laudantium, quo repudiandae repellat quidem error quae exercitationem molestiae mollitia
-            neque autem, provident earum sunt soluta. Nisi!</div>
-          <div class='reward'>${{quest.reward}}Lorem</div>
-          <div class='quest-type'>Quest Type: {{quest.quest_type}}Lorem</div>
-        </div></div>
-    {{!-- {{/each}} --}}
-  </div>
-  <div>
-    {{!-- <form id='keyword-search'> --}}
-      {{!-- <input type='text' placeholder='search keyword...' id='search' class='search' /> --}}
-      {{!-- </form> --}}
+    {{/each}}
   </div>
 </div>
