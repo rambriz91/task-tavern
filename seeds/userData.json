@@ -1,17 +1,26 @@
 [
   {
-    "name": "First User",
-    "email": "firstuser@bootcamp.com",
+    "id": 1,
+    "name": "Jorge",
+    "email": "jorge@bootcamp.com",
     "password": "password12345!"
   },
   {
-    "name": "Second User",
-    "email": "seconduser@bootcamp.com",
+    "id": 2,
+    "name": "Rob",
+    "email": "rob@bootcamp.com",
     "password": "password12345!"
   },
   {
-    "name": "Third User",
-    "email": "thirduser@bootcamp.com",
+    "id": 3,
+    "name": "Ralph",
+    "email": "ralph@bootcamp.com",
+    "password": "password12345!"
+  },
+  {
+    "id": 4,
+    "name": "Lamar",
+    "email": "lamar@bootcamp.com",
     "password": "password12345!"
   }
 ]
