@@ -44,6 +44,10 @@ Quest.init(
         key: 'id',
       },
     },
+    isTaken: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   },
   {
     sequelize,
