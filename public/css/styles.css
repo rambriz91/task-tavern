@@ -6,6 +6,7 @@
   --brown: #b96d40;
   --charcoal: #3d5467;
   --red: #690000;
+  --scroll: url('https://i.imgur.com/Y9Tiq8a.jpg');
 }
 
 a {
@@ -90,7 +91,7 @@ header {
   margin: 20px;
   width: 300px;
   min-height: 300px;
-  background-image: url('https://i.imgur.com/Y9Tiq8a.jpg');
+  background-image: var(--scroll);
   color: black;
   outline: 0.1rem solid black;
   outline-offset: -0.5rem;
@@ -104,7 +105,7 @@ header {
   padding: 10px;
   width: 80%;
   height: 80vh;
-  background-image: url('https://i.imgur.com/Y9Tiq8a.jpg');
+  background-image: var(--scroll);
   color: black;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   outline: 0.1rem solid black;
@@ -142,7 +143,7 @@ header {
   padding: 3px;
   margin: 5px;
   background: var(--green);
-    border-radius: 7px;
+  border-radius: 7px;
   font-size: 30px;
 }
 
@@ -284,7 +285,7 @@ header {
   margin: 20px;
   width: 300px;
   min-height: 300px;
-  background: #667770;
+  background: var(--scroll);
   color: black;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   outline: 0.1rem solid black;
@@ -326,7 +327,8 @@ header {
   transform: translate(60%, -50%);
 }
 
-.login-form, .signup-form {
+.login-form,
+.signup-form {
   height: 450px;
   width: 450px;
   background-color: var(--chestnut);
@@ -357,7 +359,7 @@ header {
 }
 
 .indiv-post .desc {
-font-size: 25px;
+  font-size: 25px;
 }
 
 .indiv-post .reward {
@@ -365,8 +367,8 @@ font-size: 25px;
 }
 
 .indiv-post .quest-type {
-  font-size:  25px;
- }
+  font-size: 25px;
+}
 
 #post-quest-form {
   margin: 30px;
@@ -375,7 +377,6 @@ font-size: 25px;
 .post-section {
   margin: 50px 20px;
 }
-
 
 @media (max-width: 800px) {
   header {

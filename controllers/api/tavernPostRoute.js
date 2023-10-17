@@ -47,19 +47,18 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
-  console.log(req.params.id);
+router.delete('/delete/:id', withAuth, async (req, res) => {
   try {
-    const questPostData = await Quest.destroy({
+    const deletedQuestData = await Quest.destroy({
       where: {
         id: req.params.id,
       },
     });
-    if (!questPostData) {
+    if (!deletedQuestData) {
       res.status(404).json({ message: 'No Quest found with this id!' });
       return;
     }
-    res.status(200).json(questPostData);
+    res.status(200).json(deletedQuestData);
   } catch (err) {
     res.status(500).json(err);
   }

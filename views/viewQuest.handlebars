@@ -2,20 +2,14 @@
   <div id='bulletin'>{{name}}'s Quests</div>
   <div id='posts-section'>
     {{#each quests as |quest|}}
-
-      <div class='active-quest'>
-        <a href='/quest/{{quest.id}}'>
+      <a href='/activequests/{{quest.id}}'>
+        <div class='active-quest'>
           <div class='title'>{{quest.title}}</div>
-        </a>
-        <div class='desc'>{{quest.description}}</div>
-        <div class='reward'>${{quest.reward}}</div>
-        <div class='quest-type'>Quest Type: {{quest.quest_type}}</div>
-        <button
-          id='post-quest-cancel'
-          type='button'
-          class='btn btn-danger'
-        >Cancel (Lose QT)</button>
-      </div>
+          <div class='desc'>{{quest.description}}</div>
+          <div class='reward'>${{quest.reward}}</div>
+          <div class='quest-type'>Quest Type: {{quest.quest_type}}</div>
+        </div>
+      </a>
     {{/each}}
   </div>
 </div>

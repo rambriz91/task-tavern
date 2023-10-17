@@ -17,7 +17,6 @@ router.get('/', withAuth, async (req, res) => {
       ],
     });
     const quests = questData.map((quest) => quest.get({ plain: true }));
-    console.log(quests);
     res.render('tavernboard', {
       quests,
       user: req.session.user,
@@ -43,9 +42,31 @@ router.get('/activequests', withAuth, async (req, res) => {
     });
 
     const userQuests = userQuestData.get({ plain: true });
-    console.log(userQuests);
     res.render('viewQuest', {
       ...userQuests,
+      user: req.session.user,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/activequests/:id', withAuth, async (req, res) => {
+  try {
+    const questData = await Quest.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['id', 'name'],
+        },
+      ],
+    });
+
+    const quest = questData.get({ plain: true });
+
+    res.render('user-quest', {
+      ...quest,
       user: req.session.user,
       logged_in: req.session.logged_in,
     });
