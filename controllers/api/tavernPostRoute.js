@@ -4,10 +4,6 @@ const withAuth = require('../../utils/auth');
 
 // http://localhost:3001/api/tavernPostRoute/
 
-router.get('/', withAuth, async (req, res) => {
-  res.render('Post-quest');
-});
-
 router.post('/', withAuth, async (req, res) => {
   console.log(req.body);
   console.log(req.session.user);
@@ -27,14 +23,20 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.put('id:', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   console.log(req.body);
   try {
-    const questPostData = await Quest.update(req.body, {
-      where: {
-        id: req.params.id,
+    const questPostData = await Quest.update(
+      {
+        poster_id: req.session.user.id,
+        isTaken: true,
       },
-    });
+      {
+        where: {
+          id: req.params.id,
+        },
+      },
+    );
     if (!questPostData) {
       res.status(404).json({ message: 'No Quest found with this id!' });
       return;

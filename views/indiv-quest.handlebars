@@ -2,10 +2,15 @@
   <h2 class='title'>{{title}}</h2>
   <div class='desc'>{{description}}</div>
   <div class='reward'>${{reward}}</div>
-  <div class='quest-type'>Quest Type: {{quest_type}}</div>
-  <div>Poster: {{user.name}}</div>
+  <div class='quest-type'>Quest Type:
+    {{quest_type}}
+  </div>
+  <div>Poster: {{user.name}} </div>
   <div class='bottom'>
+    <input type='hidden' id='questId' value='{{id}}' />
     <button class='accept-btn'>Accept</button>
     <button class='exit-btn'>Exit</button>
   </div>
 </div>
+
+<script src='/js/indiv-quest.js'></script>
