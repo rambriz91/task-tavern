@@ -377,3 +377,42 @@ header {
 .post-section {
   margin: 50px 20px;
 }
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    min-width: 480px;
+  }
+
+  body {
+    min-width: 480px;
+  }
+
+  .login-container {
+    transform: translate(30%, -50%);
+  }
+}
+
+@media (max-width: 680px) {
+  .login-container {
+    transform: translate(0%, -50%);
+  }
+}
+
+@media (max-width: 560px) {
+  #nav-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #badges-completed {
+    min-width: 340px;
+  }
+}
+
+@media (max-width: 530px) {
+  .login-form, .signup-form {
+    height: 400px;
+    width: 400px;
+  }
+}
