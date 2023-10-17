@@ -5,7 +5,9 @@
   <div class='quest-type'>Quest Type:
     {{quest_type}}
   </div>
-  <div>Poster: {{user.name}} </div>
+  <a href='/profile/{{poster_id}}'><div>Poster:
+      {{userName}}
+    </div></a>
   <div class='bottom'>
     <input type='hidden' id='questId' value='{{id}}' />
     <button class='accept-btn'>Accept</button>

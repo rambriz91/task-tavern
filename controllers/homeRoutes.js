@@ -126,6 +126,35 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+router.get('/profile/:id', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [
+        {
+          model: Badge,
+          attributes: [
+            'id',
+            'badge_title',
+            'badge_description',
+            'icon',
+            'user_id',
+          ],
+        },
+      ],
+    });
+    const userProfile = userData.get({ plain: true });
+    res.render('profile', {
+      ...userProfile,
+      user: req.session.user,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 router.get('/sign-up', async (req, res) => {
   res.render('sign-up');
 });
@@ -140,11 +169,12 @@ router.get('/quest/:id', withAuth, async (req, res) => {
         },
       ],
     });
-
     const quest = questData.get({ plain: true });
+    const userName = quest.user.name;
 
     res.render('indiv-quest', {
       ...quest,
+      userName,
       user: req.session.user,
       logged_in: req.session.logged_in,
     });
