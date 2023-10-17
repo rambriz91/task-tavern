@@ -1,0 +1,16 @@
+<div class='indiv-post'>
+  <h2 class='title'>{{title}}</h2>
+  <div class='desc'>{{description}}</div>
+  <div class='reward'>${{reward}}</div>
+  <div class='quest-type'>Quest Type:
+    {{quest_type}}
+  </div>
+  <div>Poster: {{user.name}} </div>
+  <div class='bottom'>
+    <input type='hidden' id='questId' value='{{id}}' />
+    <button id='cancel-btn' class='accept-btn'>cancel</button>
+    <button id='return-btn' class='exit-btn'>X</button>
+  </div>
+</div>
+
+<script src='/js/user-quest.js'></script>

@@ -2,10 +2,6 @@ const acceptBtn = document.querySelector('.accept-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const questId = document.querySelector('#questId');
 
-const exitBtnHandler = async () => {
-  document.location.replace('/');
-};
-
 const acceptBtnHandler = async () => {
   const response = await fetch(`/api/tavernpost/${questId.value}`, {
     method: 'PUT',
@@ -17,6 +13,10 @@ const acceptBtnHandler = async () => {
   } else {
     alert(response.statusText);
   }
+};
+
+const exitBtnHandler = async () => {
+  document.location.replace('/');
 };
 
 exitBtn.addEventListener('click', exitBtnHandler);
