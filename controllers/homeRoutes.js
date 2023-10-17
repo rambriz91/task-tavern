@@ -1,16 +1,18 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { Quest, User, Badge, UserQuest } = require('../models');
+const { Quest, User, Badge } = require('../models');
 
 // Prevent non logged in users from viewing the homepage
 router.get('/', withAuth, async (req, res) => {
   try {
     const questData = await Quest.findAll({
+      where: {
+        isTaken: false,
+      },
       include: [
         {
           model: User,
           attributes: ['id', 'name'],
-          // through: UserQuest,
         },
       ],
     });
@@ -26,6 +28,7 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.get('/activequests', withAuth, async (req, res) => {
   res.render('viewQuest', {
     user: req.session.user,
@@ -99,7 +102,7 @@ router.get('/sign-up', async (req, res) => {
   res.render('sign-up');
 });
 
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/quest/:id', withAuth, async (req, res) => {
   try {
     const questData = await Quest.findByPk(req.params.id, {
       include: [

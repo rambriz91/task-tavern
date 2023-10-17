@@ -1,5 +1,5 @@
     <div id="profile-page">
-        <img class="badge" src="./imgs/crown.png" alt="crown"></img>
+        <img class="badge" src="/imgs/crown.png" alt="crown"></img>
         <div class="container-1">
             <div id="username">{{name}}</div>
             <div id="user-id">ID: {{id}}</div>
@@ -11,7 +11,7 @@
             <div id="badge-title">____BADGES____</div>
             <div class="container-2">
                 {{#each badges as |badge|}}
-                <img class="emblem" src="./imgs/{{badge.icon}}" alt="{{badge.badge_title}}"></img>
+                <img class="emblem" src="/imgs/{{badge.icon}}" alt="{{badge.badge_title}}"></img>
                 {{/each}}
             </div>
         </div>
