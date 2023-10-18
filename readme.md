@@ -14,16 +14,18 @@ We created an app that allows users to post requests or take on other users requ
 
 ## Usage
 
-
+![Alt text](public/imgs/task-tavern.gif)
 
 ## Links
 
 GitHub Repo Page: https://github.com/rambriz91/task-tavern
+https://task-tavern-aa826bd56c1c.herokuapp.com/login
+
 
 ## Credits
 
 https://www.npmjs.com/package/sequelize
-https://www.npmjs.com/package/dotenv
+https://handlebarsjs.com/
 
 ## License
 

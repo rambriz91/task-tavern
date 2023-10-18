@@ -2,7 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { Quest, User, Badge } = require('../models');
 
-// Prevent non logged in users from viewing the homepage
+// Root route displays all Quests on the tavernboard
 router.get('/', withAuth, async (req, res) => {
   try {
     const questData = await Quest.findAll({
@@ -27,7 +27,7 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//Displays the Users active quests
 router.get('/activequests', withAuth, async (req, res) => {
   try {
     const userQuestData = await User.findOne({
@@ -40,7 +40,6 @@ router.get('/activequests', withAuth, async (req, res) => {
         },
       ],
     });
-
     const userQuests = userQuestData.get({ plain: true });
     res.render('viewquest', {
       ...userQuests,
@@ -51,7 +50,7 @@ router.get('/activequests', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// Route for individual user quests.
 router.get('/activequests/:id', withAuth, async (req, res) => {
   try {
     const questData = await Quest.findByPk(req.params.id, {
@@ -74,7 +73,7 @@ router.get('/activequests/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//Route for to form for posting new quests
 router.get('/postquest', withAuth, async (req, res) => {
   try {
     res.render('post-quest', {
@@ -85,7 +84,7 @@ router.get('/postquest', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//Login route
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
@@ -95,7 +94,7 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
+//Profile Route, renders user information and their badges
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -125,7 +124,7 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//Allows search by User id.
 router.get('/profile/:id', withAuth, async (req, res) => {
   try {
     const userData = await User.findOne({

@@ -2,6 +2,7 @@ const acceptBtn = document.querySelector('.accept-btn');
 const exitBtn = document.querySelector('.exit-btn');
 const questId = document.querySelector('#questId');
 
+//Allows user to accept quests from the tavern board after accessing the individual quest view.
 const acceptBtnHandler = async () => {
   const response = await fetch(`/api/tavernpost/${questId.value}`, {
     method: 'PUT',
@@ -14,7 +15,7 @@ const acceptBtnHandler = async () => {
     alert(response.statusText);
   }
 };
-
+//exits user from individual view to tavern board
 const exitBtnHandler = async () => {
   document.location.replace('/');
 };
