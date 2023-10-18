@@ -41,7 +41,7 @@ router.get('/activequests', withAuth, async (req, res) => {
       ],
     });
     const userQuests = userQuestData.get({ plain: true });
-    res.render('viewQuest', {
+    res.render('viewquest', {
       ...userQuests,
       user: req.session.user,
       logged_in: req.session.logged_in,
