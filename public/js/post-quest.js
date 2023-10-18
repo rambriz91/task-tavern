@@ -3,7 +3,7 @@ const cancelBtn = document.querySelector('#post-quest-cancel');
 const cancelBtnHandler = async () => {
   document.location.replace('/');
 };
-
+//Adds functionality to the form in the post quest view
 const postFormHandler = async (event) => {
   event.preventDefault();
 

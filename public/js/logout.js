@@ -12,7 +12,7 @@ const logout = async () => {
     alert(response.statusText);
   }
 };
-
+//Navbar buttons
 const postQuest = async () => {
   document.location.replace('/postquest');
 };
